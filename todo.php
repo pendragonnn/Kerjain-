@@ -1,7 +1,7 @@
 <?php
   $todos = [];
-  if(file_exists('todo.txt')){
-    $file = file_get_contents('todo.txt');
+  if(file_exists('src/todo.txt')){
+    $file = file_get_contents('src/todo.txt');
     $todos = unserialize($file);
   }
 
@@ -25,7 +25,7 @@
   }
 
   function saveData($todos){
-    file_put_contents('todo.txt', serialize($todos));
+    file_put_contents('src/todo.txt', serialize($todos));
     header('Location: index.php');
   }
 ?>
